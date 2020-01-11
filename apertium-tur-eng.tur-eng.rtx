@@ -6,7 +6,9 @@ nbr = sg pl sp ND ;
 cas = nom acc dat gen loc ins abl ;
 gen = m f mf GD ; 
 tam = aor pres prog ifi ;
+loc = abl loc ; 
 ger = ger ; 
+func = attr advl subst ;
 poss = px1sg px2sg px3sp px1pl px2pl px3pl ;
 t_det = pos def ind qnt ;
 t_prop = ant top ;
@@ -22,9 +24,11 @@ VP: _.tam.agr ;
 NP: _.nbr.cas  ;
 AP: _  ; 
 AdvP: _  ; 
+AdnP: _.loc  ; 
 V: _.tam.agr ; 
 N: _.nbr.cas  ; 
 Ant: _.gen.nbr.cas ;
+Top: _.nbr.cas ;
 Qst: _ ; 
 
 v: _  ; 
@@ -68,37 +72,52 @@ Cl -> VP { (if ( 1.pers not = p3 )         ! if the person of the first LU is no
               )  
           1 } ; 
 
-Cl -> NP VP { 1 _ 2 } ; 
+Cl -> NP.$cas VP { 1 _ 2 } ; 
 
 Cl -> ClQst { 1 } ;
 
-ClQst -> NP VP.$tam Qst { do@vbdo.[2.tam] _ 1 _ 2 } ; 
+ClQst -> NP.$cas VP.$tam Qst { do@vbdo.[2.tam] _ 1(PREP) _ 2 } ; 
 
-VP -> NP V.$tam.$agr { 2 _ 1 } ; 
+VP -> NP.$cas V.$tam.$agr { 2(PREP) _ 1 } ; 
 
 !VP -> 1: AdvP VP.$tam.$agr { 1 _ 2 } ;
 
-VP -> 2: AdvP VP.$tam.$agr { 2 _ 1 } ;
+VP -> AdvP VP.$tam.$agr { (if (1.lem = "also") [ 1 _ 2 ]     ! FIXME: do something better here
+                           else 
+                              [ 2 _ 1 ]) } ;
 
-V -> v.tv.$tam cop.$agr { 2 _ 1(ger)[tam=""] } ;
+V -> "v-ing" v.tv.$tam cop.$agr { 2 _ 1(ger)[tam=""] } |
+     "v" v.tv.$tam cop.$agr { 1 } ;
 
 V -> v.tv.$tam.$agr { 1 } ;
 
 AP -> adj { 1 } ; 
 
-AdvP -> adv { 1 } ; 
+AP -> AP adj { 1 _ 2 } ; 
+
+AdvP -> adv.$lem { 1 } ; 
+
+AdnP -> Top.$nbr.$loc.$func { 1(PREP) } ;
 
 NP -> AP det N.$nbr.$cas { 2 _ 1 _ 3 } ; 
+
+NP -> AP N.$nbr.$cas { 1 _ 2 } ; 
+
+NP -> AdnP NP.$nbr.$cas { 2 _ 1 } ;
 
 NP -> N.$nbr.$cas { 1 } ; 
 
 NP -> prn.pers.$pers.$nbr.$cas { 1 } ; 
 
+NP -> prn.dem.$nbr.$cas { 1 } ; 
+
 NP -> Ant.$gen.$nbr.$cas { 1 } ;
 
 ! rule for a single noun 
-N -> n.$nbr.$cas { 1(PREP) } ; 
+N -> n.$nbr.$cas { 1 } ; 
 
 Ant -> np.ant.$gen.$nbr.$cas { 1 } ;
+
+Top -> np.top.$nbr.$cas.$func { 1 } ;
 
 Qst -> qst { } ;

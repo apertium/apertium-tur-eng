@@ -9,6 +9,7 @@
 <sdef n="vbser"/>
 <sdef n="adv"/>
 <sdef n="advl"/>
+<sdef n="top"/>
 <sdef n="cop"/>
 <sdef n="prn"/>
 <sdef n="postadv"/>
@@ -20,6 +21,7 @@
 <sdef n="ant"/>
 <sdef n="np"/>
 <sdef n="ind"/>
+<sdef n="dem"/>
 <sdef n="n"/>
 <sdef n="v"/>
 <sdef n="tv"/>
@@ -44,16 +46,22 @@
 </pardef>
 <section id="main" type="standard">
 <e><p><l>Sezgi<s n="np"/><s n="ant"/><s n="f"/></l><r>Sezgi<s n="np"/><s n="ant"/><s n="f"/></r></p></e>
+<e><p><l>Balkan<s n="np"/><s n="top"/></l><r>Balkan<s n="np"/><s n="top"/></r></p></e>
 <e><p><l>yaramaz<s n="adj"/></l><r>naughty<s n="adj"/><s n="sint"/></r></p></e>
+<e><p><l>sosyal<s n="adj"/></l><r>social<s n="adj"/></r></p></e>
+<e><p><l>sıradışı<s n="adj"/></l><r>unusual<s n="adj"/></r></p></e>
 <e><p><l>ben<s n="prn"/><s n="pers"/></l><r>I<s n="prn"/></r></p></e>
 <e><p><l>ne<s n="prn"/><s n="itg"/></l><r>what<s n="prn"/><s n="itg"/></r></p></e>
+<e><p><l>bu<s n="prn"/><s n="dem"/></l><r>this<s n="prn"/><s n="dem"/></r></p></e>
 <e><p><l>şimdi<s n="adv"/></l><r>now<s n="adv"/></r></p></e>
 <e><p><l>da<s n="postadv"/></l><r>also<s n="adv"/></r></p></e>
+<e><p><l>da<s n="adv"/></l><r>also<s n="adv"/></r></p></e>
 <e><p><l>da<s n="cnjcoo"/></l><r>and<s n="cnjcoo"/></r></p></e>
 <e><p><l>yeni<s n="adj"/></l><r>new<s n="adj"/></r></p></e>
 <e><p><l>yeni<s n="adj"/><s n="advl"/></l><r>just<s n="adv"/></r></p></e>
 <e><p><l>bir<s n="det"/><s n="ind"/></l><r>a<s n="det"/><s n="ind"/></r></p></e>
 <e><p><l>çocuk<s n="n"/></l><r>child<s n="n"/></r></p><par n="n_n|sgpl"/></e>
+<e><p><l>koşul<s n="n"/></l><r>circumstance<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 <e><p><l>anne<s n="n"/></l><r>mother<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 <e><p><l>anne<s n="n"/></l><r>mum<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 <e><p><l>üzeri<s n="n"/></l><r>clothes<s n="n"/></r></p><par n="n_n|pl"/></e>
@@ -63,6 +71,7 @@
 <e><p><l>değ<s n="v"/><s n="iv"/></l><r>change<s n="vblex"/></r></p></e>
 <e><p><l>değiş<s n="v"/><s n="iv"/></l><r>change<s n="vblex"/></r></p></e>
 <e><p><l>değiştir<s n="v"/><s n="tv"/></l><r>change<s n="vblex"/></r></p></e>
+<e><p><l>yansıt<s n="v"/><s n="tv"/></l><r>reflect<s n="vblex"/></r></p></e>
 <e><p><l>tartış<s n="v"/><s n="tv"/></l><r>argue<s n="vblex"/></r></p></e>
 <e><p><l>uyan<s n="v"/><s n="iv"/></l><r>wake<g><b/>up</g><s n="vblex"/></r></p></e>
 <e><p><l>i<s n="cop"/></l><r>be<s n="vbser"/></r></p></e>
