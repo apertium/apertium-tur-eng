@@ -1,0 +1,73 @@
+<dictionary>
+<alphabet/>
+<sdefs>
+<sdef n="adj"/>
+<sdef n="sent"/>
+<sdef n="qst"/>
+<sdef n="vblex"/>
+<sdef n="itg"/>
+<sdef n="vbser"/>
+<sdef n="adv"/>
+<sdef n="advl"/>
+<sdef n="cop"/>
+<sdef n="prn"/>
+<sdef n="postadv"/>
+<sdef n="cnjcoo"/>
+<sdef n="pers"/>
+<sdef n="sint"/>
+<sdef n="det"/>
+<sdef n="f"/>
+<sdef n="ant"/>
+<sdef n="np"/>
+<sdef n="ind"/>
+<sdef n="n"/>
+<sdef n="v"/>
+<sdef n="tv"/>
+<sdef n="iv"/>
+<sdef n="pl"/>
+<sdef n="sg"/>
+<sdef n="GD"/>
+<sdef n="ND"/>
+</sdefs>
+<pardef n="n_n|sg">
+<e><p><l></l><r><s n="sg"/></r></p></e>
+<e r="LR"><p><l><s n="pl"/></l><r><s n="sg"/></r></p></e>
+</pardef>
+<pardef n="n_n|pl">
+<e><p><l></l><r><s n="pl"/></r></p></e>
+<e r="LR"><p><l><s n="pl"/></l><r><s n="pl"/></r></p></e>
+</pardef>
+<pardef n="n_n|sgpl">
+<e r="LR"><p><l></l><r><s n="ND"/></r></p></e>
+<e><p><l><s n="pl"/></l><r><s n="pl"/></r></p></e>
+<e r="RL"><p><l></l><r><s n="sg"/></r></p></e>
+</pardef>
+<section id="main" type="standard">
+<e><p><l>Sezgi<s n="np"/><s n="ant"/><s n="f"/></l><r>Sezgi<s n="np"/><s n="ant"/><s n="f"/></r></p></e>
+<e><p><l>yaramaz<s n="adj"/></l><r>naughty<s n="adj"/><s n="sint"/></r></p></e>
+<e><p><l>ben<s n="prn"/><s n="pers"/></l><r>I<s n="prn"/></r></p></e>
+<e><p><l>ne<s n="prn"/><s n="itg"/></l><r>what<s n="prn"/><s n="itg"/></r></p></e>
+<e><p><l>şimdi<s n="adv"/></l><r>now<s n="adv"/></r></p></e>
+<e><p><l>da<s n="postadv"/></l><r>also<s n="adv"/></r></p></e>
+<e><p><l>da<s n="cnjcoo"/></l><r>and<s n="cnjcoo"/></r></p></e>
+<e><p><l>yeni<s n="adj"/></l><r>new<s n="adj"/></r></p></e>
+<e><p><l>yeni<s n="adj"/><s n="advl"/></l><r>just<s n="adv"/></r></p></e>
+<e><p><l>bir<s n="det"/><s n="ind"/></l><r>a<s n="det"/><s n="ind"/></r></p></e>
+<e><p><l>çocuk<s n="n"/></l><r>child<s n="n"/></r></p><par n="n_n|sgpl"/></e>
+<e><p><l>anne<s n="n"/></l><r>mother<s n="n"/></r></p><par n="n_n|sgpl"/></e>
+<e><p><l>anne<s n="n"/></l><r>mum<s n="n"/></r></p><par n="n_n|sgpl"/></e>
+<e><p><l>üzeri<s n="n"/></l><r>clothes<s n="n"/></r></p><par n="n_n|pl"/></e>
+<e><p><l>üzeri<s n="n"/></l><r>clothing<s n="n"/></r></p><par n="n_n|sg"/></e>
+<e><p><l>gör<s n="v"/><s n="tv"/></l><r>see<s n="vblex"/></r></p></e>
+<e><p><l>say<s n="v"/><s n="tv"/></l><r>count<s n="vblex"/></r></p></e>
+<e><p><l>değ<s n="v"/><s n="iv"/></l><r>change<s n="vblex"/></r></p></e>
+<e><p><l>değiş<s n="v"/><s n="iv"/></l><r>change<s n="vblex"/></r></p></e>
+<e><p><l>değiştir<s n="v"/><s n="tv"/></l><r>change<s n="vblex"/></r></p></e>
+<e><p><l>tartış<s n="v"/><s n="tv"/></l><r>argue<s n="vblex"/></r></p></e>
+<e><p><l>uyan<s n="v"/><s n="iv"/></l><r>wake<g><b/>up</g><s n="vblex"/></r></p></e>
+<e><p><l>i<s n="cop"/></l><r>be<s n="vbser"/></r></p></e>
+<e r="LR"><p><l>mı<s n="qst"/></l><r></r></p></e>
+<e><re>[.\?]+</re><p><l><s n="sent"/></l><r><s n="sent"/></r></p></e>
+</section>
+</dictionary>
+

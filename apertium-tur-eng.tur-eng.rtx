@@ -1,0 +1,104 @@
+! lists 
+
+pers = p1 p2 p3 ;
+agr = "p1.sg" "p1.pl" "p2.sg" "p2.pl" "p3.sg" "p3.pl" ;
+nbr = sg pl sp ND ;
+cas = nom acc dat gen loc ins abl ;
+gen = m f mf GD ; 
+tam = aor pres prog ifi ;
+ger = ger ; 
+poss = px1sg px2sg px3sp px1pl px2pl px3pl ;
+t_det = pos def ind qnt ;
+t_prop = ant top ;
+
+! tag ordering
+! defines the order of tags in the phrase or terminal and the output
+S: _ ; 
+
+Cl: _  ;
+ClQst: _ ; 
+
+VP: _.tam.agr ; 
+NP: _.nbr.cas  ;
+AP: _  ; 
+AdvP: _  ; 
+V: _.tam.agr ; 
+N: _.nbr.cas  ; 
+Ant: _.gen.nbr.cas ;
+Qst: _ ; 
+
+v: _  ; 
+adj: _  ; 
+np: _.t_prop.gen.nbr ; 
+pr: _ ; 
+adv: _  ; 
+det: _  ; 
+cop: _.tam.agr ; 
+n: _.nbr  ; 
+prn: _.pers.nbr ; 
+sent: _ ; 
+ger: _.<ger> ; 
+det: <det>.t_det.<sp> ; 
+
+! mapping tables
+
+tam > tam : aor pres, ifi past ;
+poss > lem : px1sg my, px2sg your, px1pl our, px2pl your ;
+cas > lem : ins with, dat to, gen of, abl from, loc in ; 
+
+! macros 
+
+POS: (if (1.poss = "")
+            1(n)  
+      else 
+            [ *(det)[lem=1.poss>lem, t_det=pos] _ 1(n) ]) ; 
+
+PREP: (if (1.cas = "")
+            1(POS)  
+      else 
+            [ *(pr)[lem=1.cas>lem] _ 1(POS) ]) ; 
+
+
+! production rules
+
+S -> Cl sent { 1 _ 2 } ;
+
+Cl -> VP { (if ( 1.pers not = p3 )         ! if the person of the first LU is not p3
+               [ prpers@prn.[1.agr] _ ]    ! output a new LU with the lemma prpers
+              )  
+          1 } ; 
+
+Cl -> NP VP { 1 _ 2 } ; 
+
+Cl -> ClQst { 1 } ;
+
+ClQst -> NP VP.$tam Qst { do@vbdo.[2.tam] _ 1 _ 2 } ; 
+
+VP -> NP V.$tam.$agr { 2 _ 1 } ; 
+
+!VP -> 1: AdvP VP.$tam.$agr { 1 _ 2 } ;
+
+VP -> 2: AdvP VP.$tam.$agr { 2 _ 1 } ;
+
+V -> v.tv.$tam cop.$agr { 2 _ 1(ger)[tam=""] } ;
+
+V -> v.tv.$tam.$agr { 1 } ;
+
+AP -> adj { 1 } ; 
+
+AdvP -> adv { 1 } ; 
+
+NP -> AP det N.$nbr.$cas { 2 _ 1 _ 3 } ; 
+
+NP -> N.$nbr.$cas { 1 } ; 
+
+NP -> prn.pers.$pers.$nbr.$cas { 1 } ; 
+
+NP -> Ant.$gen.$nbr.$cas { 1 } ;
+
+! rule for a single noun 
+N -> n.$nbr.$cas { 1(PREP) } ; 
+
+Ant -> np.ant.$gen.$nbr.$cas { 1 } ;
+
+Qst -> qst { } ;
