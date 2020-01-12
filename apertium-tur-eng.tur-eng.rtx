@@ -1,9 +1,11 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! lists 
 
 pers = p1 p2 p3 ;
 agr = "p1.sg" "p1.pl" "p2.sg" "p2.pl" "p3.sg" "p3.pl" ;
 nbr = sg pl sp ND ;
 cas = nom acc dat gen loc ins abl ;
+acc = acc ; 
 gen = m f mf GD ; 
 tam = aor pres prog ifi ;
 loc = abl loc ; 
@@ -12,8 +14,9 @@ ger = ger ;
 func = attr advl subst ;
 poss = px1sg px2sg px3sp px1pl px2pl px3pl ;
 t_det = pos def ind qnt ;
-t_prop = ant top ;
+t_prop = ant top cog ;
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! tag ordering
 ! defines the order of tags in the phrase or terminal and the output
 S: _ ; 
@@ -27,8 +30,11 @@ AP: _  ;
 AdvP: _  ; 
 AdnP: _.loc  ; 
 V: _.tam.agr ; 
+Vsay: _.tam.agr ; 
+Comp: _.poss ; 
 N: _.nbr.cas  ; 
 Ant: _.gen.nbr.cas ;
+Cog: _.gen.nbr.cas ;
 Top: _.nbr.cas ;
 Qst: _ ; 
 
@@ -45,12 +51,14 @@ sent: _ ;
 ger: _.<ger> ; 
 det: <det>.t_det.<sp> ; 
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! mapping tables
 
 tam > tam : aor pres, ifi past ;
 poss > lem : px1sg my, px2sg your, px1pl our, px2pl your ;
 cas > lem : ins with, dat to, gen of, abl from, loc in ; 
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! macros 
 
 POS: (if (1.poss = "")
@@ -60,6 +68,8 @@ POS: (if (1.poss = "")
 
 PREP: (if (1.cas = "")
             1(POS)  
+      else-if (1.cas = acc)
+            [ *(det)[lem="the", t_det=def] _ 1(n) ] 
       else 
             [ *(pr)[lem=1.cas>lem] _ 1(POS) ]) ; 
 
@@ -69,7 +79,7 @@ DET: (if (1.det = "")
             [ *(det)[lem="the", t_det=def] _ 1(np) ]) ; 
 
 
-
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! production rules
 
 S -> Cl sent { 1 _ 2 } ;
@@ -85,7 +95,7 @@ Cl -> ClQst { 1 } ;
 
 ClQst -> NP.$cas VP.$tam Qst { do@vbdo.[2.tam] _ 1(PREP) _ 2 } ; 
 
-VP -> NP.$cas V.$tam.$agr { 2(PREP) _ 1 } ; 
+VP -> NP.$cas V.$tam.$agr { 2 _ 1(PREP) } ; 
 
 !VP -> 1: AdvP VP.$tam.$agr { 1 _ 2 } ;
 
@@ -93,8 +103,14 @@ VP -> AdvP VP.$tam.$agr { (if (1.lem = "also") [ 1 _ 2 ]     ! FIXME: do somethi
                            else 
                               [ 2 _ 1 ]) } ;
 
+VP -> Comp Vsay.$tam.$agr { 2 _ 1 } ;
+
 V -> "v-ing" v.tv.$tam cop.$agr { 2 _ 1(ger)[tam=""] } |
      "v" v.tv.$tam cop.$agr { 1 } ;
+
+Vsay -> söyle@v.tv.$tam.$agr { 1 } ; 
+
+Comp -> NP AP ol@v.*.ger_past.$poss.$acc { 1 _ 3 _ 2 } ; 
 
 V -> v.tv.$tam.$agr { 1 } ;
 
@@ -118,13 +134,23 @@ NP -> prn.pers.$pers.$nbr.$cas { 1 } ;
 
 NP -> prn.dem.$nbr.$cas { 1 } ; 
 
+NP -> Ant.$gen.$nbr Cog.*.$cas { 1 _ 2 } ; 
+
 NP -> Ant.$gen.$nbr.$cas { 1 } ;
+
+NP -> Cog.$gen.$nbr.$cas { 1 } ;
 
 ! rule for a single noun 
 N -> n.$nbr.$cas { 1 } ; 
 
 Ant -> np.ant.$gen.$nbr.$cas { 1 } ;
 
+Cog -> np.cog.$gen.$nbr.$cas { 1 } ;
+
 Top -> np.top.$nbr.$cas.$func { 1(DET) } ;
 
+Top -> AP np.top.$nbr.$cas.$func { 1 _ 2(DET) } ;
+
 Qst -> qst { } ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
