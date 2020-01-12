@@ -1,6 +1,8 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! lists 
 
+n_rel = ara ast üst alt yak yan ; 
+
 pers = p1 p2 p3 ;
 agr = "p1.sg" "p1.pl" "p2.sg" "p2.pl" "p3.sg" "p3.pl" ;
 nbr = sg pl sp ND ;
@@ -30,6 +32,7 @@ NP: _.nbr.cas  ;
 AP: _  ; 
 AdvP: _  ; 
 AdnP: _.loc  ; 
+AdnV: _; 
 V: _.tam.agr ; 
 Vsay: _.tam.agr ; 
 Comp: _.poss ; 
@@ -43,6 +46,7 @@ v: _  ;
 adj: _  ; 
 np: _.t_prop.gen.nbr ; 
 pr: _ ; 
+cnjcoo: _ ; 
 post: _ ; 
 num: _ ; 
 adv: _  ; 
@@ -119,6 +123,7 @@ Comp -> NP AP ol@v.*.ger_past.$poss.$acc { 1 _ 3 _ 2 } ;
 
 V -> v.tv.$tam.$agr { 1 } ;
 
+
 AP -> adj { 1 } ; 
 
 AP -> AP adj { 1 _ 2 } ; 
@@ -127,7 +132,16 @@ AdvP -> adv.$lem { 1 } ;
 
 AdvP -> NP post { 2 _ 1 } ;
 
+AdvP -> NP $n_rel@n { 2 _ 1 } ;
+
 AdnP -> Top.$nbr.$loc.$func { 1(PREP) } ;
+
+AdnV -> v.*.gpr_rsub { 1 } ;
+
+NP -> "ing-v" AdnV NP.$nbr.$cas { 2 _ 1 } |
+      "v-which" AdnV NP.$nbr.$cas { 1 _ which@rel _ 2 } ;
+
+NP -> NP cnjcoo NP.$nbr.$cas { 1 _ 2 _ 3 } ;
 
 NP -> det.ind NP.$nbr.$cas { 1 _ 2 } ;
 
@@ -136,6 +150,8 @@ NP -> num NP.$nbr.$cas { 1 _ 2 } ;
 NP -> AP det N.$nbr.$cas { 2 _ 1 _ 3 } ; 
 
 NP -> AP N.$nbr.$cas { 1 _ 2 } ; 
+
+NP -> n.attr N.$nbr.$cas { 1 _ 2 } ; 
 
 NP -> AdnP NP.$nbr.$cas { 2 _ 1 } ;
 

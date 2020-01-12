@@ -6,6 +6,7 @@
 <sdef n="cm"/>
 <sdef n="qst"/>
 <sdef n="pr"/>
+<sdef n="cnjcoo"/>
 <sdef n="vblex"/>
 <sdef n="itg"/>
 <sdef n="post"/>
@@ -57,6 +58,9 @@
 <section id="main" type="standard">
 
 <e><p><l>kala<s n="post"/></l><r>to<s n="pr"/></r></p></e>
+<e><p><l>ve<s n="cnjcoo"/></l><r>and<s n="cnjcoo"/></r></p></e>
+
+<e><p><l>ara<s n="n"/></l><r>between<s n="pr"/></r></p></e>
 
 <e><p><l>Sezgi<s n="np"/><s n="ant"/><s n="f"/></l><r>Sezgi<s n="np"/><s n="ant"/><s n="f"/></r></p></e>
 <e><p><l>Rushiti<s n="np"/><s n="cog"/></l><r>Rushiti<s n="np"/><s n="cog"/></r></p></e>
@@ -65,6 +69,8 @@
 <e><p><l>Gana<s n="np"/><s n="top"/></l><r>Ghana<s n="np"/><s n="top"/></r></p></e>
 <e><p><l>yaramaz<s n="adj"/></l><r>naughty<s n="adj"/><s n="sint"/></r></p></e>
 <e><p><l>sosyal<s n="adj"/></l><r>social<s n="adj"/></r></p></e>
+<e><p><l>sık<s n="adj"/></l><r>frequent<s n="adj"/></r></p></e>
+<e><p><l>sık<s n="adj"/><s n="advl"/></l><r>often<s n="adv"/></r></p></e>
 <e><p><l>karmaşık<s n="adj"/></l><r>complicated<s n="adj"/></r></p></e>
 <e><p><l>kuzey<s n="adj"/></l><r>northern<s n="adj"/></r></p></e>
 <e><p><l>beş<s n="num"/></l><r>five<s n="num"/></r></p></e>
@@ -80,6 +86,10 @@
 <e><p><l>yeni<s n="adj"/><s n="advl"/></l><r>just<s n="adv"/></r></p></e>
 <e><p><l>bir<s n="det"/><s n="ind"/></l><r>a<s n="det"/><s n="ind"/></r></p></e>
 <e><p><l>çocuk<s n="n"/></l><r>child<s n="n"/></r></p><par n="n_n|sgpl"/></e>
+<e><p><l>eşitsizlik<s n="n"/></l><r>inequality<s n="n"/></r></p><par n="n_n|sgpl"/></e>
+<e><p><l>kadın<s n="n"/></l><r>woman<s n="n"/></r></p><par n="n_n|sgpl"/></e>
+<e><p><l>erkek<s n="n"/></l><r>man<s n="n"/></r></p><par n="n_n|sgpl"/></e>
+<e><p><l>maaş<s n="n"/></l><r>salary<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 <e><p><l>penaltı<s n="n"/></l><r>penalty<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 <e><p><l>dakika<s n="n"/></l><r>minute<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 <e><p><l>maç<s n="n"/></l><r>match<s n="n"/></r></p><par n="n_n|sgpl"/></e>
@@ -93,6 +103,8 @@
 <e><p><l>üzeri<s n="n"/></l><r>clothing<s n="n"/></r></p><par n="n_n|sg"/></e>
 <e><p><l>gör<s n="v"/><s n="tv"/></l><r>see<s n="vblex"/></r></p></e>
 <e><p><l>say<s n="v"/><s n="tv"/></l><r>count<s n="vblex"/></r></p></e>
+<e><p><l>rastla<s n="v"/><s n="iv"/></l><r>encounter<s n="vblex"/></r></p></e>
+<e><p><l>rastlan<s n="v"/><s n="iv"/></l><r>occur<s n="vblex"/></r></p></e>
 <e><p><l>değ<s n="v"/><s n="iv"/></l><r>change<s n="vblex"/></r></p></e>
 <e><p><l>değiş<s n="v"/><s n="iv"/></l><r>change<s n="vblex"/></r></p></e>
 <e><p><l>ol<s n="v"/><s n="iv"/></l><r>be<s n="vblex"/></r></p></e>
