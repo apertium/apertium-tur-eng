@@ -7,7 +7,6 @@ pers = p1 p2 p3 ;
 agr = "p1.sg" "p1.pl" "p2.sg" "p2.pl" "p3.sg" "p3.pl" ;
 nbr = sg pl sp ND ;
 cas = nom acc dat gen loc ins abl ;
-acc = acc ; 
 gen = m f mf GD ; 
 tam = aor pres prog ifi ;
 loc = abl loc ; 
@@ -96,15 +95,15 @@ Cl -> VP { (if ( 1.pers not = p3 )         ! if the person of the first LU is no
               )  
           1 } ; 
 
-Cl -> NP cm VPsay.$tam.$agr { 1 _ 3 } ; 
+Cl -> NP cm VPsay.[tam].[agr] { 1 _ 3 } ; 
 
-Cl -> NP.$cas VP { 1 _ 2 } ; 
+Cl -> NP.[cas] VP { 1 _ 2 } ; 
 
 Cl -> ClQst { 1 } ;
 
-ClQst -> NP.$cas VP.$tam Qst { do@vbdo.[2.tam] _ 1(PREP) _ 2 } ; 
+ClQst -> NP.[cas] VP.[tam] Qst { do@vbdo.[2.tam] _ 1(PREP) _ 2 } ; 
 
-VP -> NP.$cas V.$tam.$agr { 2 _ 1(PREP) } ; 
+VP -> NP.[cas] V.$tam.$agr { 2 _ 1(PREP) } ; 
 
 !VP -> 1: AdvP VP.$tam.$agr { 1 _ 2 } ;
 
@@ -119,7 +118,7 @@ V -> "v-ing" v.tv.$tam cop.$agr { 2 _ 1(ger)[tam=""] } |
 
 Vsay -> söyle@v.tv.$tam.$agr { 1 } ; 
 
-Comp -> NP AP ol@v.*.ger_past.$poss.$acc { 1 _ 3 _ 2 } ; 
+Comp -> NP AP ol@v.*.ger_past.[poss].acc.$poss { 1 _ 3 _ 2 } ; 
 
 V -> v.tv.$tam.$agr { 1 } ;
 
@@ -134,9 +133,9 @@ AdvP -> NP post { 2 _ 1 } ;
 
 AdvP -> NP $n_rel@n { 2 _ 1 } ;
 
-AdnP -> NP $n_rel@n.$nbr.$loc.$func { 2 _ 1 } ;
+AdnP -> NP $n_rel@n.[nbr].[loc].[func].$loc { 2 _ 1 } ;
 
-AdnP -> Top.$nbr.$loc.$func { 1(PREP) } ;
+AdnP -> Top.[nbr].[loc].[func].$loc { 1(PREP) } ;
 
 AdnV -> v.*.gpr_rsub { 1 } ;
 
@@ -159,28 +158,28 @@ NP -> AdnP NP.$nbr.$cas { 2 _ 1 } ;
 
 NP -> N.$nbr.$cas { 1 } ; 
 
-NP -> prn.pers.$pers.$nbr.$cas { 1 } ; 
+NP -> prn.pers.[pers].$nbr.$cas { 1 } ; 
 
 NP -> prn.dem.$nbr.$cas { 1 } ; 
 
-NP -> Ant.$gen.$nbr Cog.*.$cas { 1 _ 2 } ; 
+NP -> Ant.[gen].$nbr Cog.$cas { 1 _ 2 } ; 
 
-NP -> Ant.$gen.$nbr.$cas { 1 } ;
+NP -> Ant.[gen].$nbr.$cas { 1 } ;
 
-NP -> Cog.$gen.$nbr.$cas { 1 } ;
+NP -> Cog.[gen].$nbr.$cas { 1 } ;
 
 NP -> N.*.gen N.$nbr.$cas { 2 _ of@pr _ 1(DET) }  ;
 
 ! rule for a single noun 
 N -> n.$nbr.$cas { 1 } ; 
 
-Ant -> np.ant.$gen.$nbr.$cas { 1 } ;
+Ant -> np.ant.[gen].$nbr.$cas { 1 } ;
 
-Cog -> np.cog.$gen.$nbr.$cas { 1 } ;
+Cog -> np.cog.[gen].$nbr.$cas { 1 } ;
 
-Top -> np.top.$nbr.$cas.$func { 1(DET) } ;
+Top -> np.top.*.[func].$nbr.$cas { 1(DET) } ;
 
-Top -> AP np.top.$nbr.$cas.$func { 1 _ 2(DET) } ;
+Top -> AP np.top.*.[func].$nbr.$cas { 1 _ 2(DET) } ;
 
 Qst -> qst { } ;
 
