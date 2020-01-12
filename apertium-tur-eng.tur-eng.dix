@@ -30,6 +30,7 @@
 <sdef n="sg"/>
 <sdef n="GD"/>
 <sdef n="ND"/>
+<sdef n="DET"/>
 </sdefs>
 <pardef n="n_n|sg">
 <e><p><l></l><r><s n="sg"/></r></p></e>
@@ -44,9 +45,13 @@
 <e><p><l><s n="pl"/></l><r><s n="pl"/></r></p></e>
 <e r="RL"><p><l></l><r><s n="sg"/></r></p></e>
 </pardef>
+<pardef n="top_top|def">
+<e r="LR"><p><l></l><r><s n="DET"/></r></p></e>
+<e r="RL"><p><l></l><r></r></p></e>
+</pardef>
 <section id="main" type="standard">
 <e><p><l>Sezgi<s n="np"/><s n="ant"/><s n="f"/></l><r>Sezgi<s n="np"/><s n="ant"/><s n="f"/></r></p></e>
-<e><p><l>Balkan<s n="np"/><s n="top"/></l><r>Balkan<s n="np"/><s n="top"/></r></p></e>
+<e><p><l>Balkan<s n="np"/><s n="top"/></l><r>Balkan<s n="np"/><s n="top"/></r></p><par n="top_top|def"/></e>
 <e><p><l>yaramaz<s n="adj"/></l><r>naughty<s n="adj"/><s n="sint"/></r></p></e>
 <e><p><l>sosyal<s n="adj"/></l><r>social<s n="adj"/></r></p></e>
 <e><p><l>sıradışı<s n="adj"/></l><r>unusual<s n="adj"/></r></p></e>

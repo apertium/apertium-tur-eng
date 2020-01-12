@@ -7,6 +7,7 @@ cas = nom acc dat gen loc ins abl ;
 gen = m f mf GD ; 
 tam = aor pres prog ifi ;
 loc = abl loc ; 
+det = DET ;
 ger = ger ; 
 func = attr advl subst ;
 poss = px1sg px2sg px3sp px1pl px2pl px3pl ;
@@ -61,6 +62,12 @@ PREP: (if (1.cas = "")
             1(POS)  
       else 
             [ *(pr)[lem=1.cas>lem] _ 1(POS) ]) ; 
+
+DET: (if (1.det = "")
+            1(np) 
+      else 
+            [ *(det)[lem="the", t_det=def] _ 1(np) ]) ; 
+
 
 
 ! production rules
@@ -118,6 +125,6 @@ N -> n.$nbr.$cas { 1 } ;
 
 Ant -> np.ant.$gen.$nbr.$cas { 1 } ;
 
-Top -> np.top.$nbr.$cas.$func { 1 } ;
+Top -> np.top.$nbr.$cas.$func { 1(DET) } ;
 
 Qst -> qst { } ;
