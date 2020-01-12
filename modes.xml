@@ -60,6 +60,25 @@
     </pipeline>
   </mode>
 
+  <mode name="tur-eng-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="tur-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w -1 -n">
+        <file name="tur-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tur-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t -m">
+        <file name="tur-eng.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
   <mode name="tur-eng-tree" install="no">
     <pipeline>
       <program name="lt-proc -w">
@@ -71,6 +90,9 @@
       <program name="apertium-pretransfer"/>
       <program name="lt-proc -b">
         <file name="tur-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="tur-eng.autolex.bin"/>
       </program>
       <program name="rtx-proc -b -T">
         <file name="tur-eng.rtx.bin"/>
@@ -90,6 +112,9 @@
       <program name="apertium-pretransfer"/>
       <program name="lt-proc -b">
         <file name="tur-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="tur-eng.autolex.bin"/>
       </program>
       <program name="rtx-proc">
         <file name="tur-eng.rtx.bin"/>

@@ -25,6 +25,7 @@ Cl: _  ;
 ClQst: _ ; 
 
 VP: _.tam.agr ; 
+VPsay: _.tam.agr ; 
 NP: _.nbr.cas  ;
 AP: _  ; 
 AdvP: _  ; 
@@ -42,6 +43,8 @@ v: _  ;
 adj: _  ; 
 np: _.t_prop.gen.nbr ; 
 pr: _ ; 
+post: _ ; 
+num: _ ; 
 adv: _  ; 
 det: _  ; 
 cop: _.tam.agr ; 
@@ -89,6 +92,8 @@ Cl -> VP { (if ( 1.pers not = p3 )         ! if the person of the first LU is no
               )  
           1 } ; 
 
+Cl -> NP cm VPsay.$tam.$agr { 1 _ 3 } ; 
+
 Cl -> NP.$cas VP { 1 _ 2 } ; 
 
 Cl -> ClQst { 1 } ;
@@ -103,7 +108,7 @@ VP -> AdvP VP.$tam.$agr { (if (1.lem = "also") [ 1 _ 2 ]     ! FIXME: do somethi
                            else 
                               [ 2 _ 1 ]) } ;
 
-VP -> Comp Vsay.$tam.$agr { 2 _ 1 } ;
+VPsay -> Comp Vsay.$tam.$agr { 2 _ 1 } ;
 
 V -> "v-ing" v.tv.$tam cop.$agr { 2 _ 1(ger)[tam=""] } |
      "v" v.tv.$tam cop.$agr { 1 } ;
@@ -120,7 +125,13 @@ AP -> AP adj { 1 _ 2 } ;
 
 AdvP -> adv.$lem { 1 } ; 
 
+AdvP -> NP post { 2 _ 1 } ;
+
 AdnP -> Top.$nbr.$loc.$func { 1(PREP) } ;
+
+NP -> det.ind NP.$nbr.$cas { 1 _ 2 } ;
+
+NP -> num NP.$nbr.$cas { 1 _ 2 } ;
 
 NP -> AP det N.$nbr.$cas { 2 _ 1 _ 3 } ; 
 
@@ -139,6 +150,8 @@ NP -> Ant.$gen.$nbr Cog.*.$cas { 1 _ 2 } ;
 NP -> Ant.$gen.$nbr.$cas { 1 } ;
 
 NP -> Cog.$gen.$nbr.$cas { 1 } ;
+
+NP -> N.*.gen N.$nbr.$cas { 2 _ of@pr _ 1(DET) }  ;
 
 ! rule for a single noun 
 N -> n.$nbr.$cas { 1 } ; 

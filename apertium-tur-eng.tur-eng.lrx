@@ -1,0 +1,16 @@
+<rules>
+
+  <rule weight="1.0"> 
+    <match lemma="at" tags="v.*"><select lemma="throw" tags="vblex.*"/></match>
+  </rule>
+
+  <rule weight="0.5"> 
+    <match lemma="at" tags="v.*"><select lemma="score" tags="vblex.*"/></match>
+  </rule>
+
+  <rule weight="1.0"> 
+    <match lemma="gol" tags="n.*"/>
+    <match lemma="at" tags="v.*"><select lemma="score" tags="vblex.*"/></match>
+  </rule>
+
+</rules>
