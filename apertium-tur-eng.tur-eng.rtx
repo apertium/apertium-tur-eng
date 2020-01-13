@@ -134,9 +134,9 @@ AdvP -> NP post { 2 _ 1 } ;
 
 AdvP -> NP $n_rel@n { 2 _ 1 } ;
 
-AdnP -> NP $n_rel@n.$nbr.$loc.$func { 2 _ 1 } ;
+AdnP -> NP $n_rel@n.$nbr.[loc].[attr] { 2 _ 1 } ;
 
-AdnP -> Top.$nbr.$loc.$func { 1(PREP) } ;
+AdnP -> Top.$nbr.[loc].[attr] { 1(PREP) } ;
 
 AdnV -> v.*.gpr_rsub { 1 } ;
 

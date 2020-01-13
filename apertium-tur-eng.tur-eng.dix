@@ -6,7 +6,7 @@
 <sdef n="cm"/>
 <sdef n="qst"/>
 <sdef n="pr"/>
-<sdef n="cnjcoo"/>
+<sdef n="cnjadv"/>
 <sdef n="vblex"/>
 <sdef n="itg"/>
 <sdef n="post"/>
@@ -57,34 +57,35 @@
 </pardef>
 <section id="main" type="standard">
 
-<e><p><l>kala<s n="post"/></l><r>to<s n="pr"/></r></p></e>
+<!-- SECTION: Miscellaneous -->
+
 <e><p><l>ve<s n="cnjcoo"/></l><r>and<s n="cnjcoo"/></r></p></e>
-
-<e><p><l>ara<s n="n"/></l><r>between<s n="pr"/></r></p></e>
-
-<e><p><l>Sezgi<s n="np"/><s n="ant"/><s n="f"/></l><r>Sezgi<s n="np"/><s n="ant"/><s n="f"/></r></p></e>
-<e><p><l>Rushiti<s n="np"/><s n="cog"/></l><r>Rushiti<s n="np"/><s n="cog"/></r></p></e>
-<e><p><l>Balkan<s n="np"/><s n="top"/></l><r>Balkan<s n="np"/><s n="top"/></r></p><par n="top_top|def"/></e>
-<e><p><l>Kosova<s n="np"/><s n="top"/></l><r>Kosovo<s n="np"/><s n="top"/></r></p></e>
-<e><p><l>Gana<s n="np"/><s n="top"/></l><r>Ghana<s n="np"/><s n="top"/></r></p></e>
-<e><p><l>yaramaz<s n="adj"/></l><r>naughty<s n="adj"/><s n="sint"/></r></p></e>
-<e><p><l>sosyal<s n="adj"/></l><r>social<s n="adj"/></r></p></e>
-<e><p><l>sık<s n="adj"/></l><r>frequent<s n="adj"/></r></p></e>
-<e><p><l>sık<s n="adj"/><s n="advl"/></l><r>often<s n="adv"/></r></p></e>
-<e><p><l>karmaşık<s n="adj"/></l><r>complicated<s n="adj"/></r></p></e>
-<e><p><l>kuzey<s n="adj"/></l><r>northern<s n="adj"/></r></p></e>
-<e><p><l>beş<s n="num"/></l><r>five<s n="num"/></r></p></e>
-<e><p><l>sıradışı<s n="adj"/></l><r>unusual<s n="adj"/></r></p></e>
-<e><p><l>ben<s n="prn"/><s n="pers"/></l><r>I<s n="prn"/></r></p></e>
-<e><p><l>ne<s n="prn"/><s n="itg"/></l><r>what<s n="prn"/><s n="itg"/></r></p></e>
-<e><p><l>bu<s n="prn"/><s n="dem"/></l><r>this<s n="prn"/><s n="dem"/></r></p></e>
-<e><p><l>şimdi<s n="adv"/></l><r>now<s n="adv"/></r></p></e>
+<e><p><l>ile<s n="cnjcoo"/></l><r>and<s n="cnjcoo"/></r></p></e>
+<e><p><l>ancak<s n="cnjadv"/></l><r>however<s n="cnjadv"/></r></p></e>
 <e><p><l>da<s n="postadv"/></l><r>also<s n="adv"/></r></p></e>
 <e><p><l>da<s n="adv"/></l><r>also<s n="adv"/></r></p></e>
 <e><p><l>da<s n="cnjcoo"/></l><r>and<s n="cnjcoo"/></r></p></e>
-<e><p><l>yeni<s n="adj"/></l><r>new<s n="adj"/></r></p></e>
-<e><p><l>yeni<s n="adj"/><s n="advl"/></l><r>just<s n="adv"/></r></p></e>
+
+
+<!-- SECTION: Adpositions -->
+
+<e><p><l>ile<s n="post"/></l><r>with<s n="pr"/></r></p></e>
+<e><p><l>kala<s n="post"/></l><r>to<s n="pr"/></r></p></e>
+
+<e><p><l>ara<s n="n"/></l><r>between<s n="pr"/></r></p></e>
+
+<!-- SECTION: Determiners -->
+
 <e><p><l>bir<s n="det"/><s n="ind"/></l><r>a<s n="det"/><s n="ind"/></r></p></e>
+
+<!-- SECTION: Pronouns -->
+
+<e><p><l>ben<s n="prn"/><s n="pers"/></l><r>I<s n="prn"/></r></p></e>
+<e><p><l>ne<s n="prn"/><s n="itg"/></l><r>what<s n="prn"/><s n="itg"/></r></p></e>
+<e><p><l>bu<s n="prn"/><s n="dem"/></l><r>this<s n="prn"/><s n="dem"/></r></p></e>
+
+<!-- SECTION: Nouns -->
+
 <e><p><l>çocuk<s n="n"/></l><r>child<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 <e><p><l>eşitsizlik<s n="n"/></l><r>inequality<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 <e><p><l>kadın<s n="n"/></l><r>woman<s n="n"/></r></p><par n="n_n|sgpl"/></e>
@@ -101,6 +102,38 @@
 <e><p><l>anne<s n="n"/></l><r>mum<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 <e><p><l>üzeri<s n="n"/></l><r>clothes<s n="n"/></r></p><par n="n_n|pl"/></e>
 <e><p><l>üzeri<s n="n"/></l><r>clothing<s n="n"/></r></p><par n="n_n|sg"/></e>
+<e><p><l>bilgisayar<s n="n"/></l><r>computer<s n="n"/></r></p><par n="n_n|sgpl"/></e>
+<e><p><l>korsan<s n="n"/></l><r>corsair<s n="n"/></r></p><par n="n_n|sgpl"/></e>
+
+<!-- SECTION: Proper nouns -->
+
+<e><p><l>Sezgi<s n="np"/><s n="ant"/><s n="f"/></l><r>Sezgi<s n="np"/><s n="ant"/><s n="f"/></r></p></e>
+<e><p><l>Rushiti<s n="np"/><s n="cog"/></l><r>Rushiti<s n="np"/><s n="cog"/></r></p></e>
+<e><p><l>Balkan<s n="np"/><s n="top"/></l><r>Balkan<s n="np"/><s n="top"/></r></p><par n="top_top|def"/></e>
+<e><p><l>Kosova<s n="np"/><s n="top"/></l><r>Kosovo<s n="np"/><s n="top"/></r></p></e>
+<e><p><l>Gana<s n="np"/><s n="top"/></l><r>Ghana<s n="np"/><s n="top"/></r></p></e>
+
+<!-- SECTION: Adjectives -->
+<e><p><l>yeni<s n="adj"/></l><r>new<s n="adj"/></r></p></e>
+<e><p><l>yeni<s n="adj"/><s n="advl"/></l><r>just<s n="adv"/></r></p></e>
+<e><p><l>yaramaz<s n="adj"/></l><r>naughty<s n="adj"/><s n="sint"/></r></p></e>
+<e><p><l>sosyal<s n="adj"/></l><r>social<s n="adj"/></r></p></e>
+<e><p><l>sık<s n="adj"/></l><r>frequent<s n="adj"/></r></p></e>
+<e><p><l>sık<s n="adj"/><s n="advl"/></l><r>often<s n="adv"/></r></p></e>
+<e><p><l>karmaşık<s n="adj"/></l><r>complicated<s n="adj"/></r></p></e>
+<e><p><l>kuzey<s n="adj"/></l><r>northern<s n="adj"/></r></p></e>
+<e><p><l>beş<s n="num"/></l><r>five<s n="num"/></r></p></e>
+<e><p><l>sıradışı<s n="adj"/></l><r>unusual<s n="adj"/></r></p></e>
+
+
+
+<!-- SECTION: Adverbs -->
+
+<e><p><l>şimdi<s n="adv"/></l><r>now<s n="adv"/></r></p></e>
+<e><p><l>nasıl<s n="adv"/><s n="itg"/></l><r>how<s n="adv"/><s n="itg"/></r></p></e>
+
+<!-- SECTION: Verbs -->
+
 <e><p><l>gör<s n="v"/><s n="tv"/></l><r>see<s n="vblex"/></r></p></e>
 <e><p><l>say<s n="v"/><s n="tv"/></l><r>count<s n="vblex"/></r></p></e>
 <e><p><l>rastla<s n="v"/><s n="iv"/></l><r>encounter<s n="vblex"/></r></p></e>
@@ -118,6 +151,7 @@
 <e><p><l>i<s n="cop"/></l><r>be<s n="vbser"/></r></p></e>
 <e r="LR"><p><l>mı<s n="qst"/></l><r></r></p></e>
 <e><re>[.\?]+</re><p><l><s n="sent"/></l><r><s n="sent"/></r></p></e>
+<e><re>[0-9]+</re><p><l><s n="num"/></l><r><s n="num"/></r></p></e>
 <e><p><l>,<s n="cm"/></l><r>,<s n="cm"/></r></p></e>
 </section>
 </dictionary>
