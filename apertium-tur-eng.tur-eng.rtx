@@ -209,6 +209,8 @@ NP -> Top NP.*.[poss] [$nbr=2.nbr, $cas=2.cas] { 1 _ 2 } ;
 
 NP -> Top [$nbr=1.nbr, $cas=1.cas] { 1 } ;
 
+NP -> Top [$cas=1.cas,$nbr=sg] { 1 } ;
+
 ! rule for a single noun 
 N -> n.$nbr.$cas { 1 } ; 
 

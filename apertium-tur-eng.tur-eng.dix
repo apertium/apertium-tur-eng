@@ -113,6 +113,7 @@
 <e><p><l>anne<s n="n"/></l><r>mum<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 <e><p><l>üzeri<s n="n"/></l><r>clothes<s n="n"/></r></p><par n="n_n|pl"/></e>
 <e><p><l>üzeri<s n="n"/></l><r>clothing<s n="n"/></r></p><par n="n_n|sg"/></e>
+<e><p><l>şüphecilik<s n="n"/></l><r>scepticism<s n="n"/></r></p><par n="n_n|sg"/></e>
 <e><p><l>bilgisayar<s n="n"/></l><r>computer<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 <e><p><l>plan<s n="n"/></l><r>plan<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 <e><p><l>referandum<s n="n"/></l><r>referendum<s n="n"/></r></p><par n="n_n|sgpl"/></e>
@@ -122,6 +123,7 @@
 <e><p><l>uyarı<s n="n"/></l><r>warning<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 <e><p><l>tatbikat<s n="n"/></l><r>exercise<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 <e><p><l>hafta<s n="n"/></l><r>week<s n="n"/></r></p><par n="n_n|sgpl"/></e>
+<e><p><l>gecikme<s n="n"/></l><r>delay<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 
 <e><p><l>Ocak<s n="n"/></l><r>January<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 <e><p><l>Şubat<s n="n"/></l><r>February<s n="n"/></r></p><par n="n_n|sgpl"/></e>
@@ -137,6 +139,8 @@
 <e><p><l>Kosova<s n="np"/><s n="top"/></l><r>Kosovo<s n="np"/><s n="top"/></r></p></e>
 <e><p><l>Afrika<s n="np"/><s n="top"/></l><r>Africa<s n="np"/><s n="top"/></r></p></e>
 <e><p><l>Rusya<s n="np"/><s n="top"/></l><r>Russia<s n="np"/><s n="top"/></r></p></e>
+<e><p><l>Sırbistan<s n="np"/><s n="top"/></l><r>Serbia<s n="np"/><s n="top"/></r></p></e>
+<e><p><l>Avrupa<s n="np"/><s n="top"/></l><r>Europe<s n="np"/><s n="top"/></r></p></e>
 <e><p><l>Gürcistan<s n="np"/><s n="top"/></l><r>Georgia<s n="np"/><s n="top"/></r></p></e>
 <e><p><l>Gana<s n="np"/><s n="top"/></l><r>Ghana<s n="np"/><s n="top"/></r></p></e>
 <e><p><l>AB<s n="np"/><s n="top"/></l><r>EU<s n="np"/><s n="top"/></r></p></e>
@@ -187,6 +191,9 @@
 <e><p><l>yap<s n="v"/><s n="tv"/></l><r>make<s n="vblex"/></r></p></e>
 <e><p><l>yayınla<s n="v"/><s n="tv"/></l><r>issue<s n="vblex"/></r></p></e>
 <e><p><l>ver<s n="v"/><s n="tv"/></l><r>give<s n="vblex"/></r></p></e>
+<e><p><l>körükle<s n="v"/><s n="tv"/></l><r>fuel<s n="vblex"/></r></p></e>
+<e><p><l>körükle<s n="v"/><s n="tv"/></l><r>blow<s n="vblex"/></r></p></e>
+<e><p><l>körükle<s n="v"/><s n="tv"/></l><r>fan<s n="vblex"/></r></p></e>
 <e><p><l>uyan<s n="v"/><s n="iv"/></l><r>wake<g><b/>up</g><s n="vblex"/></r></p></e>
 <e><p><l>i<s n="cop"/></l><r>be<s n="vbser"/></r></p></e>
 <e r="LR"><p><l>mı<s n="qst"/></l><r></r></p></e>
