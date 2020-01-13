@@ -39,6 +39,7 @@ Vsay: _.tam.agr ;
 Comp: _.poss ; 
 N: _.nbr.cas  ; 
 Ant: _.gen.nbr.cas ;
+Pred: _ ;
 Cog: _.gen.nbr.cas ;
 Top: _.nbr.cas ;
 Org: _.nbr.cas ;
@@ -144,10 +145,13 @@ Comp -> NP AP ol@v.*.ger_past.[poss].[acc] [$poss=3.poss] { 1 _ 3(NEG) _ 2 } ;
 
 Comp -> NP ol@v.*.ger_past.[poss].[acc] [$poss=2.poss] { 2(NEG) _ 1 } ; 
 
+Pred -> AP cop { 2 _ 1 } ;
 
 AP -> adj { 1 } ; 
 
 AP -> AP adj { 1 _ 2 } ; 
+
+AP -> adv AP { 1 _ 2 } ;
 
 AdvP -> adv.$lem { 1 } ; 
 
@@ -211,6 +215,8 @@ N -> n.$nbr.$cas { 1 } ;
 Ant -> np.ant.$gen.$nbr.$cas { 1 } ;
 
 Cog -> np.cog.$gen.$nbr.$cas { 1 } ;
+
+Top -> np.top.loc.attr [$nbr=1.nbr, $cas=1.cas, $func=1.func] { 1(DET) } ;
 
 Top -> np.top.$nbr.$cas.$func { 1(DET) } ;
 

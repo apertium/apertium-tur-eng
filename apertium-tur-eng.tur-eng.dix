@@ -5,6 +5,7 @@
 <sdef n="sent"/>
 <sdef n="cm"/>
 <sdef n="qst"/>
+<sdef n="ord"/>
 <sdef n="pr"/>
 <sdef n="m"/>
 <sdef n="cnjadv"/>
@@ -90,6 +91,10 @@
 <e><p><l>ne<s n="prn"/><s n="itg"/></l><r>what<s n="prn"/><s n="itg"/></r></p></e>
 <e><p><l>bu<s n="prn"/><s n="dem"/></l><r>this<s n="prn"/><s n="dem"/></r></p></e>
 
+<!-- SECTION: Numerals --> 
+
+<e><p><l>beş<s n="num"/></l><r>five<s n="num"/></r></p></e>
+
 <!-- SECTION: Nouns -->
 
 <e><p><l>çocuk<s n="n"/></l><r>child<s n="n"/></r></p><par n="n_n|sgpl"/></e>
@@ -116,6 +121,7 @@
 <e><p><l>ateşkes<s n="n"/></l><r>ceasefire<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 <e><p><l>uyarı<s n="n"/></l><r>warning<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 <e><p><l>tatbikat<s n="n"/></l><r>exercise<s n="n"/></r></p><par n="n_n|sgpl"/></e>
+<e><p><l>hafta<s n="n"/></l><r>week<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 
 <e><p><l>Ocak<s n="n"/></l><r>January<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 <e><p><l>Şubat<s n="n"/></l><r>February<s n="n"/></r></p><par n="n_n|sgpl"/></e>
@@ -129,6 +135,7 @@
 <e><p><l>Kırca<s n="np"/><s n="cog"/></l><r>Kırca<s n="np"/><s n="cog"/></r></p></e>
 <e><p><l>Balkan<s n="np"/><s n="top"/></l><r>Balkan<s n="np"/><s n="top"/></r></p><par n="top_top|def"/></e>
 <e><p><l>Kosova<s n="np"/><s n="top"/></l><r>Kosovo<s n="np"/><s n="top"/></r></p></e>
+<e><p><l>Afrika<s n="np"/><s n="top"/></l><r>Africa<s n="np"/><s n="top"/></r></p></e>
 <e><p><l>Rusya<s n="np"/><s n="top"/></l><r>Russia<s n="np"/><s n="top"/></r></p></e>
 <e><p><l>Gürcistan<s n="np"/><s n="top"/></l><r>Georgia<s n="np"/><s n="top"/></r></p></e>
 <e><p><l>Gana<s n="np"/><s n="top"/></l><r>Ghana<s n="np"/><s n="top"/></r></p></e>
@@ -138,6 +145,8 @@
 <e><p><l>NATO<s n="np"/><s n="org"/></l><r>NATO<s n="np"/><s n="org"/></r></p></e>
 
 <!-- SECTION: Adjectives -->
+<e><p><l>ilk<s n="adj"/></l><r>first<s n="adj"/><s n="ord"/></r></p></e>
+
 <e><p><l>yeni<s n="adj"/></l><r>new<s n="adj"/></r></p></e>
 <e><p><l>yeni<s n="adj"/><s n="advl"/></l><r>just<s n="adv"/></r></p></e>
 <e><p><l>yaramaz<s n="adj"/></l><r>naughty<s n="adj"/><s n="sint"/></r></p></e>
@@ -146,14 +155,18 @@
 <e><p><l>sık<s n="adj"/><s n="advl"/></l><r>often<s n="adv"/></r></p></e>
 <e><p><l>karmaşık<s n="adj"/></l><r>complicated<s n="adj"/></r></p></e>
 <e><p><l>kuzey<s n="adj"/></l><r>northern<s n="adj"/></r></p></e>
-<e><p><l>beş<s n="num"/></l><r>five<s n="num"/></r></p></e>
+<e><p><l>kuzey<s n="adj"/></l><r>north<s n="adj"/></r></p></e>
+<e><p><l>güney<s n="adj"/></l><r>south<s n="adj"/></r></p></e>
+<e><p><l>güney<s n="adj"/></l><r>southern<s n="adj"/></r></p></e>
 <e><p><l>sıradışı<s n="adj"/></l><r>unusual<s n="adj"/></r></p></e>
+<e><p><l>sakin<s n="adj"/></l><r>calm<s n="adj"/><s n="sint"/></r></p></e>
 
 
 
 <!-- SECTION: Adverbs -->
 
 <e><p><l>şimdi<s n="adv"/></l><r>now<s n="adv"/></r></p></e>
+<e><p><l>daha<s n="adv"/></l><r>more<s n="adv"/></r></p></e>
 <e><p><l>nasıl<s n="adv"/><s n="itg"/></l><r>how<s n="adv"/><s n="itg"/></r></p></e>
 
 <!-- SECTION: Verbs -->
