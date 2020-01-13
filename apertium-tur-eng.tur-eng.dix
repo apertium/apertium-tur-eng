@@ -6,6 +6,7 @@
 <sdef n="cm"/>
 <sdef n="qst"/>
 <sdef n="pr"/>
+<sdef n="m"/>
 <sdef n="cnjadv"/>
 <sdef n="vblex"/>
 <sdef n="itg"/>
@@ -15,6 +16,7 @@
 <sdef n="advl"/>
 <sdef n="num"/>
 <sdef n="top"/>
+<sdef n="org"/>
 <sdef n="cop"/>
 <sdef n="prn"/>
 <sdef n="postadv"/>
@@ -34,11 +36,13 @@
 <sdef n="iv"/>
 <sdef n="pl"/>
 <sdef n="sg"/>
+<sdef n="attr"/>
 <sdef n="GD"/>
 <sdef n="ND"/>
 <sdef n="DET"/>
 </sdefs>
 <pardef n="n_n|sg">
+<e r="LR"><p><l><s n="attr"/></l><r><s n="sg"/></r></p></e>
 <e><p><l></l><r><s n="sg"/></r></p></e>
 <e r="LR"><p><l><s n="pl"/></l><r><s n="sg"/></r></p></e>
 </pardef>
@@ -47,6 +51,7 @@
 <e r="LR"><p><l><s n="pl"/></l><r><s n="pl"/></r></p></e>
 </pardef>
 <pardef n="n_n|sgpl">
+<e r="LR"><p><l><s n="attr"/></l><r><s n="sg"/></r></p></e>
 <e r="LR"><p><l></l><r><s n="ND"/></r></p></e>
 <e><p><l><s n="pl"/></l><r><s n="pl"/></r></p></e>
 <e r="RL"><p><l></l><r><s n="sg"/></r></p></e>
@@ -73,6 +78,7 @@
 <e><p><l>kala<s n="post"/></l><r>to<s n="pr"/></r></p></e>
 
 <e><p><l>ara<s n="n"/></l><r>between<s n="pr"/></r></p></e>
+<e><p><l>hak<s n="n"/></l><r>about<s n="pr"/></r></p></e>
 
 <!-- SECTION: Determiners -->
 
@@ -103,15 +109,33 @@
 <e><p><l>üzeri<s n="n"/></l><r>clothes<s n="n"/></r></p><par n="n_n|pl"/></e>
 <e><p><l>üzeri<s n="n"/></l><r>clothing<s n="n"/></r></p><par n="n_n|sg"/></e>
 <e><p><l>bilgisayar<s n="n"/></l><r>computer<s n="n"/></r></p><par n="n_n|sgpl"/></e>
+<e><p><l>plan<s n="n"/></l><r>plan<s n="n"/></r></p><par n="n_n|sgpl"/></e>
+<e><p><l>referandum<s n="n"/></l><r>referendum<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 <e><p><l>korsan<s n="n"/></l><r>corsair<s n="n"/></r></p><par n="n_n|sgpl"/></e>
+<e><p><l>destek<s n="n"/></l><r>support<s n="n"/></r></p><par n="n_n|sgpl"/></e>
+<e><p><l>ateşkes<s n="n"/></l><r>ceasefire<s n="n"/></r></p><par n="n_n|sgpl"/></e>
+<e><p><l>uyarı<s n="n"/></l><r>warning<s n="n"/></r></p><par n="n_n|sgpl"/></e>
+<e><p><l>tatbikat<s n="n"/></l><r>exercise<s n="n"/></r></p><par n="n_n|sgpl"/></e>
+
+<e><p><l>Ocak<s n="n"/></l><r>January<s n="n"/></r></p><par n="n_n|sgpl"/></e>
+<e><p><l>Şubat<s n="n"/></l><r>February<s n="n"/></r></p><par n="n_n|sgpl"/></e>
+<e><p><l>Nisan<s n="n"/></l><r>April<s n="n"/></r></p><par n="n_n|sgpl"/></e>
 
 <!-- SECTION: Proper nouns -->
 
 <e><p><l>Sezgi<s n="np"/><s n="ant"/><s n="f"/></l><r>Sezgi<s n="np"/><s n="ant"/><s n="f"/></r></p></e>
+<e><p><l>Bora<s n="np"/><s n="ant"/><s n="m"/></l><r>Bora<s n="np"/><s n="ant"/><s n="m"/></r></p></e>
 <e><p><l>Rushiti<s n="np"/><s n="cog"/></l><r>Rushiti<s n="np"/><s n="cog"/></r></p></e>
+<e><p><l>Kırca<s n="np"/><s n="cog"/></l><r>Kırca<s n="np"/><s n="cog"/></r></p></e>
 <e><p><l>Balkan<s n="np"/><s n="top"/></l><r>Balkan<s n="np"/><s n="top"/></r></p><par n="top_top|def"/></e>
 <e><p><l>Kosova<s n="np"/><s n="top"/></l><r>Kosovo<s n="np"/><s n="top"/></r></p></e>
+<e><p><l>Rusya<s n="np"/><s n="top"/></l><r>Russia<s n="np"/><s n="top"/></r></p></e>
+<e><p><l>Gürcistan<s n="np"/><s n="top"/></l><r>Georgia<s n="np"/><s n="top"/></r></p></e>
 <e><p><l>Gana<s n="np"/><s n="top"/></l><r>Ghana<s n="np"/><s n="top"/></r></p></e>
+<e><p><l>AB<s n="np"/><s n="top"/></l><r>EU<s n="np"/><s n="top"/></r></p></e>
+
+<e><p><l>BM<s n="np"/><s n="org"/></l><r>UN<s n="np"/><s n="org"/></r></p></e>
+<e><p><l>NATO<s n="np"/><s n="org"/></l><r>NATO<s n="np"/><s n="org"/></r></p></e>
 
 <!-- SECTION: Adjectives -->
 <e><p><l>yeni<s n="adj"/></l><r>new<s n="adj"/></r></p></e>
@@ -147,6 +171,9 @@
 <e><p><l>at<s n="v"/><s n="tv"/></l><r>score<s n="vblex"/></r></p></e>
 <e><p><l>at<s n="v"/><s n="tv"/></l><r>throw<s n="vblex"/></r></p></e>
 <e><p><l>söyle<s n="v"/><s n="tv"/></l><r>say<s n="vblex"/></r></p></e>
+<e><p><l>yap<s n="v"/><s n="tv"/></l><r>make<s n="vblex"/></r></p></e>
+<e><p><l>yayınla<s n="v"/><s n="tv"/></l><r>issue<s n="vblex"/></r></p></e>
+<e><p><l>ver<s n="v"/><s n="tv"/></l><r>give<s n="vblex"/></r></p></e>
 <e><p><l>uyan<s n="v"/><s n="iv"/></l><r>wake<g><b/>up</g><s n="vblex"/></r></p></e>
 <e><p><l>i<s n="cop"/></l><r>be<s n="vbser"/></r></p></e>
 <e r="LR"><p><l>mı<s n="qst"/></l><r></r></p></e>

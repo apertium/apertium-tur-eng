@@ -1,7 +1,7 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! lists 
 
-n_rel = ara ast üst alt yak yan ; 
+n_rel = ara ast üst alt yak yan hak ; 
 
 pers = p1 p2 p3 ;
 agr = "p1.sg" "p1.pl" "p2.sg" "p2.pl" "p3.sg" "p3.pl" ;
@@ -12,6 +12,7 @@ gen = m f mf GD ;
 tam = aor pres prog ifi ;
 loc = abl loc ; 
 det = DET ;
+neg = neg ; 
 ger = ger ; 
 func = attr advl subst ;
 poss = px1sg px2sg px3sp px1pl px2pl px3pl ;
@@ -31,7 +32,7 @@ VPsay: _.tam.agr ;
 NP: _.nbr.cas  ;
 AP: _  ; 
 AdvP: _  ; 
-AdnP: _.loc  ; 
+AdnP: _  ; 
 AdnV: _; 
 V: _.tam.agr ; 
 Vsay: _.tam.agr ; 
@@ -40,6 +41,7 @@ N: _.nbr.cas  ;
 Ant: _.gen.nbr.cas ;
 Cog: _.gen.nbr.cas ;
 Top: _.nbr.cas ;
+Org: _.nbr.cas ;
 Qst: _ ; 
 
 v: _  ; 
@@ -47,6 +49,8 @@ adj: _  ;
 np: _.t_prop.gen.nbr ; 
 pr: _ ; 
 cnjcoo: _ ; 
+cnjadv: _ ; 
+cm: _ ; 
 post: _ ; 
 num: _ ; 
 adv: _  ; 
@@ -77,6 +81,8 @@ PREP: (if (1.cas = "")
             1(POS)  
       else-if (1.cas = acc)
             [ *(det)[lem="the", t_det=def] _ 1(n) ] 
+      else-if (1.cas = nom)
+            [ 1(n) ] 
       else 
             [ *(pr)[lem=1.cas>lem] _ 1(POS) ]) ; 
 
@@ -85,20 +91,31 @@ DET: (if (1.det = "")
       else 
             [ *(det)[lem="the", t_det=def] _ 1(np) ]) ; 
 
+NEG: (if (1.neg = "")
+            1(v) 
+      else 
+            [ 1(v) _ *(adv)[lem="not"] _  ]) ; 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! production rules
 
 S -> Cl sent { 1 _ 2 } ;
 
+S -> cnjadv cm S { 1 _ 2 _ 3 } ;
+
+Cl -> NP cm VP.[tam].[agr] [$tam=3.tam, $agr=3.agr] { 1 _ 3 } ; 
+
 Cl -> VP { (if ( 1.pers not = p3 )         ! if the person of the first LU is not p3
                [ prpers@prn.[1.agr] _ ]    ! output a new LU with the lemma prpers
               )  
           1 } ; 
 
+
 Cl -> NP cm VPsay.$tam.$agr { 1 _ 3 } ; 
 
-Cl -> NP.$cas VP { 1 _ 2 } ; 
+Cl -> NP VPsay.$tam.$agr { 1 _ 2 } ; 
+
+Cl -> NP.nom VP { 1 _ 2 } ; 
 
 Cl -> ClQst { 1 } ;
 
@@ -114,14 +131,18 @@ VP -> AdvP VP.$tam.$agr { (if (1.lem = "also") [ 1 _ 2 ]     ! FIXME: do somethi
 
 VPsay -> Comp Vsay.$tam.$agr { 2 _ 1 } ;
 
-V -> "v-ing" v.tv.$tam cop.$agr { 2 _ 1(ger)[tam=""] } |
+V -> v.tv.$tam.$agr { 1 } ;
+
+V -> "v-ing" v.tv.[tam] cop.[tam].[agr] [$tam=1.tam, $agr=2.agr] { 2 _ 1(ger)[tam=""] } |
      "v" v.tv.$tam cop.$agr { 1 } ;
 
-Vsay -> söyle@v.tv.$tam.$agr { 1 } ; 
+Vsay -> 2: söyle@v.tv.[tam].[agr] [$tam=1.tam, $agr=1.agr] { 1 _ that@cnjsub } ; 
 
-Comp -> NP AP ol@v.*.ger_past.$poss.$acc { 1 _ 3 _ 2 } ; 
+Vsay -> 2: söyle@v.tv.[tam] cop.[tam].[agr] [$agr=2.agr, $tam=1.tam] { 1 _ that@cnjsub } ; 
 
-V -> v.tv.$tam.$agr { 1 } ;
+Comp -> NP AP ol@v.*.ger_past.[poss].[acc] [$poss=3.poss] { 1 _ 3(NEG) _ 2 } ; 
+
+Comp -> NP ol@v.*.ger_past.[poss].[acc] [$poss=2.poss] { 2(NEG) _ 1 } ; 
 
 
 AP -> adj { 1 } ; 
@@ -130,13 +151,18 @@ AP -> AP adj { 1 _ 2 } ;
 
 AdvP -> adv.$lem { 1 } ; 
 
+AdvP -> Top.loc { 1(PREP) } ;
+
 AdvP -> NP post { 2 _ 1 } ;
 
-AdvP -> NP $n_rel@n { 2 _ 1 } ;
+AdvP -> NP [n_rel]@n.[loc] { 2 _ 1 } ;
+AdvP -> NP [n_rel]@n.[poss].[loc] { 2 _ 1 } ;
 
-AdnP -> NP $n_rel@n.$nbr.[loc].[attr] { 2 _ 1 } ;
+AdnP -> NP [n_rel]@n.*.loc.attr [$nbr=2.nbr] { 2 _ 1 } ;
 
-AdnP -> Top.$nbr.[loc].[attr] { 1(PREP) } ;
+AdnP -> Top.$nbr.loc.attr { 1(PREP) } ;
+
+AdnP -> num yaş@n.[poss].loc.attr [$lem="year-old"] { 1 _ year-old@adj } ;
 
 AdnV -> v.*.gpr_rsub { 1 } ;
 
@@ -155,9 +181,11 @@ NP -> AP N.$nbr.$cas { 1 _ 2 } ;
 
 NP -> n.attr N.$nbr.$cas { 1 _ 2 } ; 
 
-NP -> AdnP NP.$nbr.$cas { 2 _ 1 } ;
+NP -> AdnP NP [$nbr=2.nbr, $cas=2.cas] { 
+          (if (1.lem = "year-old") [ 1 _ 2 ] 
+           else [ 2 _ 1 ])  } ;
 
-NP -> N.$nbr.$cas { 1 } ; 
+NP -> N.*.[cas] [$nbr=1.nbr, $poss=1.poss, $cas=1.cas] { 1 } ; 
 
 NP -> prn.pers.$pers.$nbr.$cas { 1 } ; 
 
@@ -171,6 +199,12 @@ NP -> Cog.$gen.$nbr.$cas { 1 } ;
 
 NP -> N.*.gen N.$nbr.$cas { 2 _ of@pr _ 1(DET) }  ;
 
+NP -> Org NP [$nbr=2.nbr, $cas=2.cas] { 1 _ 2 } ;
+
+NP -> Top NP.*.[poss] [$nbr=2.nbr, $cas=2.cas] { 1 _ 2 } ;
+
+NP -> Top [$nbr=1.nbr, $cas=1.cas] { 1 } ;
+
 ! rule for a single noun 
 N -> n.$nbr.$cas { 1 } ; 
 
@@ -179,6 +213,8 @@ Ant -> np.ant.$gen.$nbr.$cas { 1 } ;
 Cog -> np.cog.$gen.$nbr.$cas { 1 } ;
 
 Top -> np.top.$nbr.$cas.$func { 1(DET) } ;
+
+Org -> np.org.$nbr.$cas.$func { 1(DET) } ;
 
 Top -> AP np.top.$nbr.$cas.$func { 1 _ 2(DET) } ;
 
